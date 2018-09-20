@@ -1,0 +1,960 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!--<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+  <link rel="stylesheet" type="text/css" href="ASSET/bootstrap.min.css">
+  <script src="ASSET/1.12.0_jquery.min.js"></script>
+  <script src="ASSET/3.3.6_js_bootstrap.min.js"></script>
+</head>
+
+<script>
+ var $a=0;
+$(document).ready(function(){
+
+	$("#proclo").click(function(){
+		$("#pan1,#pan2,#pan34").collapse('show');
+		$("#pro").collapse('hide');
+	});
+	$("#hom").click(function(){
+		$("#pro").collapse('hide');	
+		$("#pan1,#pan2,#pan34").collapse('show');
+	});
+	
+	$("#use").click(function(){
+		$("#pro").collapse('show');	
+		$("#pan1,#pan2,#pan34").collapse('hide');
+	});
+	
+	$("#cab").click(function(){
+		$("#suc").collapse('show');
+		$("#pick").collapse('hide');
+	});
+	
+	$('#model').change(function()
+	{
+		var option = $(this).find('option:selected').val();
+        if(option==4||option==6){
+			$('#pas').val(option);}
+		else{
+			$("#pas").val("Please select the Service")
+		}
+      });
+	
+	$("#back2").click(function(){
+		$("#log,#time").collapse('show');
+		$("#avail2,#coll1,#end1,#end2,#avail,#alet1,#coll2,#avail2,#coll3").collapse('hide');
+	});
+	
+	$("#cls3").click(function(){
+		$("#avail2").collapse('show');
+		$("#log,#time,#coll1,#end1,#end2,#avail,#alet1,#coll2,#avail2").collapse('hide');
+	});
+	
+	$("#clss").click(function(){
+		$("#coll3").collapse('show');
+		$("#log,#time,#coll1,#end1,#end2,#avail,#alet1,#coll2#avail2").collapse('hide');
+	});
+	
+	$("#show").click(function(){
+		$('#coll1').collapse('show');
+		$('#log,#time,#coll2,#end1,#end2,#avail,#alet1,#avail2,#coll3').collapse('hide');
+	});
+
+    $("#mod2").click(function(){
+		$("#log,#time").collapse('show');
+		$("#coll1,#coll2,#end1,#end2,#avail,#alet1").collapse('hide');
+	});
+
+    $("#close").click(function(){
+		$("#end1,#end2").collapse('hide');
+		$("#alet1").collapse('show');
+	});
+
+	$(".b1").click(function(){
+		$("#end1,#end2").collapse('show');
+		$("#avail,#coll2,#coll1,#coll3,#avail2,#alet1,#log,#time").collapse('hide');
+	});
+
+    $("#back").click(function(){
+		$("#avail,#coll2").collapse('hide');
+		$("#coll1").collapse('show');
+	});
+
+	$("#cls2").click(function(){
+		$("#avail").collapse('show');
+	});
+	
+    $(".cls").click(function(){
+		$("#coll1").collapse('toggle');
+		$("#coll2").collapse('toggle');
+    });
+	
+	$("#finish").click(function(){
+		$(".div1,.details,#book1,#final").collapse('hide');
+		$("#last").collapse('show');
+	});
+	
+	$("#cont").click(function(){
+		$("#final").collapse('show');
+		for($i=1;$i<=$("#room").val();$i++)
+		{
+			$("#fin_tab").append("<tr><td>"+ $i +"</td><td><input type='text' class='form-control'></td><td><input type='number' class='form-control'></td><td><select class='form-control'>option>Male</option>MALE<option>Female</option></select></td></tr>");
+		}
+	});
+	
+	$("#book").click(function(){
+		$("#book1").collapse('toggle');
+	});
+    
+	$("#pack_search").click(function(){
+		$(".details").collapse('toggle');
+	});
+	
+	$(".tbUser").on('click','.Delete',function(){
+    $(this).closest('tr').remove();
+     // alert("Ticket Has been Cancelled !");
+    });
+	
+	$("#tab").click(function(){
+		$a++;
+		$(".tbUser").closest('table').remove();
+		$("#alt,#alt1").collapse('show');
+		//alert("value of a"+$a);
+		
+	});
+	
+	$("#a2").click(function(){
+		
+		//alert("Value of A="+$a);
+		if($a == 0){
+			$("#tab2").show();
+		}
+		else{
+			$("#tab2").hide();
+			$("#alt2").show();
+		}
+	});
+	
+    $("#dem").click(function(){
+        $("#dem1").collapse('toggle');
+        $("#dem2").collapse('toggle');
+    });
+	$("#a1").click(function(){
+		$("#demo1").collapse('toggle');
+		$("#demo2").collapse('hide');
+		$("#demo3").collapse('hide');
+		$("#demo4").collapse('hide');
+	});
+	$("#a2").click(function(){
+		$("#demo1").collapse('hide');
+		$("#demo2").collapse('toggle');
+		$("#demo3").collapse('hide');
+		$("#demo4").collapse('hide');
+	});
+	$("#a3").click(function(){
+		$("#demo1").collapse('hide');
+		$("#demo2").collapse('hide');
+		$("#demo3").collapse('toggle');
+		$("#demo4").collapse('hide');
+	});
+	$("#a4").click(function(){
+		$("#demo1").collapse('hide');
+		$("#demo2").collapse('hide');
+		$("#demo3").collapse('hide');
+		$("#demo4").collapse('toggle');
+	});
+});
+</script>
+<style>
+ .glyphicon {
+ font-size: 22px;
+ color:red;
+}
+
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#3b5998;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="color:#FFFFFF;">
+        <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" id="hom"><font color="#FFFFFF" size="+3.5" face="batmfa">IRCTC</font></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <a href="#" id="use" class="navbar-brand"><span class="glyphicon glyphicon-user" style="color:#FFFFFF;"></span><font color="#FFFFFF" size="+1"> Profile </font></a>
+        <a href="index.html" class="navbar-brand"><span class="glyphicon glyphicon-log-out" style="color:#FFFFFF;"></span><font color="#FFFFFF" size="+1"> Log Out</font></a>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br><br>  
+ 
+<!--Container-->
+<div class="container">
+  <div class="row well">  
+	<div class="col-md-5">
+		<h2>The Fastest Way to Book</h2>
+		<p class="lead">Make your journey a special one through IRCTC.</p>
+    	<button type='button' class="btn btn-lg btn-default" id="dem"><!--data-toggle="collapse" data-target="#demo">-->Search <span class="glyphicon glyphicon-search"></span></button>
+	    <button type='button' class="btn btn-lg btn-primary" data-toggle="modal" data-target="#myModal" id="mod2">Book Tickets Now</button>
+	</div>
+    
+    <div class="col-md-7 collapse in hidden-sm hidden-xs" id="dem1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="13.jpg" height="200" width="370">
+    </div>
+	<div class="col-md-7 collapse" id="dem2">
+		
+        
+        <form class="form-inline" role="form"><br><br>
+    <center><div class="form-group">
+            <input type="text" class="form-control" id="email" placeholder="From" required readonly>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group">
+           <input type="text" class="form-control" id="pwd" placeholder="To" required readonly>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group">
+    		<input type="date" class="form-control" required readonly>
+    </div>
+    </center><br><br>
+<center>    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" id="show">Submit</button></center>
+  </form>
+        
+	</div>
+   </div> 
+  
+
+<!-- Next Row Starts Here-->
+
+ <div class="row">
+ 
+   <div class="col-md-4 well">
+   <h4 style="color:#FF0000">Alerts & Updates!</h4>
+   	<marquee direction="up" scrolldelay="150"><h3>Go Anywhere</h3>
+	<p>Special Train being run from 20-04-2016 to 30-04-2016 during Singhastha Mela in UJJAIN.</p>
+    <p>
+Booking and cancellation for the trains originating from Delhi Node will not be available from 00:15 hrs to 02:00 hrs of 21/04/2016 due to maintenance activity. Inconvenience caused is deeply regretted.</p>
+	
+	     </marquee>
+     <!--<marquee direction="up"><h3>Go Anywhere</h3>
+	<p>If you need to get to space today, why not try out a transporter? Despite the claims,
+there are have been no deaths in the last 6 weeks</p>
+     </marquee>-->
+  </div>
+ 
+   <!--Profile Panel--> 
+   <div class="collapse col-md-8" id="pro">
+   	<div class="panel panel-info">
+    	<div class="panel-heading">Profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<a href="#" id="proclo"><span class="glyphicon glyphicon-remove-circle"></span></a>
+        </div>
+    		
+            <div class="panel-body">
+            	<div class="row">
+                	<div class="col-md-2">
+                    	<span class="glyphicon glyphicon-user" style="font-size:62px;color:#CCCCCC;"></span> 
+                    </div>
+                    
+                    <div class="col-md-8">
+                     <table class="table">
+                    	<tr><td><h4>First Name</h4></td><td><input type="text" readonly value="Jayasurya" class="form-control"></td></tr>
+                        <tr><td><h4>Last Name</h4></td><td><input type="text" readonly value="Seetharaman" class="form-control"></td></tr>
+                        <tr><td><h4>Gender</h4></td>
+                        	<td>
+                            	<label class="radio-inline">
+     								<input type="radio" name="optradio" checked>Male
+					    		</label>
+					    		<label class="radio-inline">
+						    		<input type="radio" name="optradio" readonly>Female
+					    		</label>
+                            </td></tr>
+                        <tr><td><h4>Marital Status</h4></td>
+                        	<td>
+                            	<label class="radio-inline">
+     						 		<input type="radio" name="optradio">Married
+					    		</label>
+					    		<label class="radio-inline">
+						      		<input type="radio" name="optradio" checked>Unmarried
+					    		</label>
+                            </td></tr>
+                        <tr><td><h4>Date Of Birth</h4></td><td><input type="text" value="06/04/1996" readonly class="form-control"></td></tr>
+                        <tr><td><h4>Occupation</h4></td><td><input type="text" value="Student" readonly class="form-control"></td></tr>
+                        <tr><td><h4>Mail</h4></td><td><input type="email" value="mail@google.com" readonly class="form-control"></td></tr>
+                        <tr><td><h4>Mobile</h4></td><td><input type="text" value="9087654321" readonly class="form-control"></td></tr>
+                        <tr><td><h4>Nationality</h4></td><td><input type="text" value="India" readonly class="form-control"></td></tr>
+                        <tr><td><h4>Address</h4></td><td><input type="text" value="62,Kumaran Nagar" readonly class="form-control"></td></tr>
+                      </table>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+    </div>
+   </div>
+   
+   <div class="col-md-4 text-center collapse in" id="pan1"><br><br>
+   <h2>CANCELLING TICKETS</h2>
+ 	 <a href="#demo1" id="a1" style="text-decoration:none">
+		<span class="glyphicon glyphicon-remove"></span>
+	    <h4>CANCEL</h4>
+    	<p>Click Here To Cancel The Tickets..</p>
+	 </a>
+ </div> 
+  <!--Cloumn Two-->
+   <div class="col-md-4 text-center collapse in" id="pan2"><br><br>
+   <h2>BOOKING HISTORY</h2>
+ 	 <a href="#demo2" id="a2" style="text-decoration:none">
+		<span class="glyphicon glyphicon-briefcase"></span>
+	    <h4>BOOKED TICKET HISTORY</h4>
+    	<p>Lorem ipsum dolor sit amet..</p>
+	 </a>
+   </div>   
+ </div>
+<!-- Row ends here-->
+
+ <!-- Panel 1 -->
+ <div class="row">
+   <div class="col-md-8 collapse col-md-offset-4" id="demo1">
+      <div class="panel panel-default panel-danger">
+       <div class="panel-heading">CANCELLING TICKETS</div>
+        <div class="panel-body">
+        <table class="table table-stripped tbUser">
+          <tr style="background-color:red;color:white"><th>Train No</th><th>Train Name</th><th>From</th><th>To</th><th>BOARDING</th><th></th></tr> 
+          <tr><td>16382</td><td>CAPE MUMBAI EXP</td><td>CAPE</td><td>CBE</td><td>MADURAI</td><td>&nbsp;&nbsp;<button class="btn" data-toggle="modal" data-target="#DEL">VIEW</button></td></tr>
+          
+        </table>
+        <div class="collapse alert alert-danger" id="alt1">
+         <strong>Oops!</strong> You have No tickets to cancel.
+        </div>
+        </div>
+         
+     </div>
+   </div>
+ </div>
+ 
+ <!-- Panel 2-->
+ <div class="row">
+  <div class="col-md-8 collapse col-md-offset-4" id="demo2">
+      <div class="panel panel-default panel-primary">
+       <div class="panel-heading">BOOKING HISTORY</div>
+        <div class="panel-body">
+         <table class="table table-stripped" id="tab2">
+         <tr style="background-color:#2D6375;color:white"><th>TRAIN.NO</th><th>TRAIN NAME</th><th>FROM</th><th>DEPARTURE</th><th>TO</th><th>ARRIVAL</th><th>TRAVEL TIME</th><th>DATE</th></tr>
+         <tr><td>16382</td><td>CAPE MUNBAI</td><td>CAPE</td><td>06:55</td><td>CBE</td><td>18:01</td><td>11:06 hrs</td><td>03-05-2016</td></tr>
+         </table>
+         
+         <div class="collapse alert alert-danger" id="alt2">
+         <strong>Sorry!</strong> You have No history to View.
+        </div>
+        </div>
+         
+     </div>
+  </div>
+ </div>
+ 
+ <!-- Panel 3-->
+ <div class="row">
+  <div class="col-md-8 collapse col-md-offset-4" id="demo3">
+      <div class="panel panel-default panel-success">
+       <div class="panel-heading">Package Details</div>
+        <div class="panel-body"> 
+          <div class="row">
+        	 <div class="col-md-8"></div>
+             
+          </div>
+         	<div class="row collapse in div1">
+                <div class="col-md-8" id="div1"><br>
+                	<select id="pack" class="form-control">
+                    	<option>CHENNAI-COORG TOUR PACKAGE</option>
+                        <option>BANGALORE-SHIRDI SAI BABA DARSHAN</option>
+                        <option>BANGALORE-SHIRDI PACKAGE</option>
+                        <option>BEST OF KUMAON CHARTER COACH</option>
+                        <option>CHENNAI-COCHIN-MUNNAR</option>
+                        <option>CHENNAI-COIMBATORE-OOTY-MUDUMALAI-CHENNAI</option>
+                    </select>
+                </div>
+                
+            </div>
+            
+            <div class="row collapse in div1">
+            	<div class="col-md-4 col-md-offset-8"><br>
+                	<button class="btn btn-default" id="pack_search">SEARCH&nbsp;&nbsp;<span class="glyphicon glyphicon-search" style="font-size:14px;"></span></button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 collapse details"><hr>
+                	<br><img src="pack.jpg"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" id="book">BOOK</button>
+                </div>
+                <div class="col-md-8 collapse details"><hr>
+                	<h3>CHENNAI-COORG TOUR PACKAGE</h3><br>
+                    <h5>4 Nights/5 Days</h5><hr>
+                    <h5>Destination:&nbsp;&nbsp;&nbsp;Coorg/Mysore/
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="btn btn-success">Rs.4875</span></h5>
+                    <p style="text-align:justify;">Mysore, the capital city of the Wodeyars has always enchanted its admirers with its quaint charm, rich heritage, magnificent palaces, beautifully laid-out gardens, imposing buildings, broad shady avenues and sacred temples. Coorg dubbed as the Scotland of India, this town has a lot to offer to the tourism.</p>
+                </div>
+            </div>
+            
+            <div class="row collapse" id="book1"><br><hr>
+            	<div class="col-md-3">
+                	<h4>Tour Starting Date:</h4>
+                </div>
+                <div class="col-md-3">
+                	<input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                	<h4>Boarding Station :</h4>
+                </div>
+                <div class="col-md-3">
+                	<select class="form-control">
+                    	<option>CHENNAI CENTRAL</option>
+                        <option>KATPADI JN(KPD)</option>
+                        <option>ARAKKONAM(AJ)</option>
+                    </select>
+                </div>
+                <div class="col-md-5"><br>
+                	<h4>Select Accommodation Type:</h4>
+                </div>
+                <div class="col-md-6 col-md-offset-1"><br>
+                	<select class="form-control" id="room">
+                        <option value=1>1 Adult(Rs.7999)</option>
+                    	<option value=2>2 Adult(Rs.13634)</option>
+                        <option value=3>2 Adult + 1 Child with extra bed(Rs.15743)</option>
+                        <option value=3>2 Adult + 1 Child without extra bed(Rs.14743)</option>
+                        <option value=4>2 Adult + 2 Child with extra bed(Rs.16743</option>
+                        <option value=5>4 Adult + 1 Child with extra bed(Rs.17743</option>
+                   </select>
+                </div>
+                <div class="col-md-2 col-md-offset-10"><br>
+                	<button class="btn btn-success" id="cont">CONTINUE</button>
+                </div>
+            </div>
+            
+            <div class="row collapse" id="last">
+            	<div class="col-md-10 col-md-offset-2 alert alert-success">
+                	<strong>Success!</strong>Ticket Has been Booked !
+                </div>
+            </div>
+                        
+            <div class="row collapse" id="final"><br><hr>
+            	<div class="col-md-12">
+                	<table class="table table-responsive" id="fin_tab">
+                    	<tr style="background-color:red;color:white;">
+                        	<th>SNO</th><th>NAME</th><th>AGE</th><th>GENDER</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-10 col-md-offset-1 col-md-offset-1"><hr>
+                   <h3 style="color:green;">Contact Details</h3><br>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                	<h4>Name:</h4>
+                </div>
+                <div class="col-md-3">
+                	<input type="text" value="Jayasurya" class="form-control">
+                </div>
+                <div class="col-md-3">
+                	<h4>Mob.No</h4>
+                </div>
+                <div class="col-md-3">
+                	<input type="text" value="9087654321" class="form-control">
+                </div>
+                <div class="col-md-5 col-md-offset-1"><br>
+                	<h4>Address:</h4>
+                </div>
+                <div class="col-md-6"><br>
+                	<input type="text" value="162 Kumaran Nagar,  Ondipudur S.O" class="form-control">
+                </div>
+                
+                <div class="col-md-4 col-md-offset-8"><br>
+                	<button class="btn btn-primary" id="finish">CONFIRM BOOKING</button>
+                </div>
+            </div>
+            
+        </div>
+        
+     </div>
+  </div>
+ </div>
+ 
+ <!-- Panel 4-->
+ <div class="row">
+  <div class="col-md-8 collapse col-md-offset-4" id="demo4">
+      <div class="panel panel-default panel-info">
+       <div class="panel-heading">Cab Booking</div>
+        <div class="panel-body">
+         
+        	
+            <!--PICK-UP-->
+            <div id="pick" class="collapse in">
+            	<div class="row">
+            		<div class="col-md-4 col-md-offset-2">
+                		Pick Up/Drop
+                	</div>
+            		<div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                		<select id="pd" class="form-control">
+                    	<option value="0">--Choose--</option>
+                    	<option value="1">Pick Up</option>
+                    	<option value="2">Drop</option>
+                    	</select>
+                	</div>
+            	</div>
+                
+            	<div class="row"><br>
+              		<div class="col-md-4 col-md-offset-2">
+              			Date and Time
+              		</div>
+              		<div class="col-md-4 col-md-offset-0 col-md-offset-2">
+            			<input type="datetime-local" class="form-control">
+              		</div>  
+            	</div>
+                
+                <div class="row"><br>
+                	<div class="col-md-4 col-md-offset-2">
+                    	Station
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                    	<select class="form-control">
+                        	<option>COIMBATORE</option>
+                            <option>CHENNAI</option>
+                            <option>TRICHY</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row"><br>
+                	<div class="col-md-4 col-md-offset-2">
+                    	Car Services
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                    	<select class="form-control" id="model">
+                        	<option>---Choose---</option>
+                        	<option value="4">SUV/MUV</option>
+                            <option value="6">Medium Segmant</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row"><br>
+                	<div class="col-md-4 col-md-offset-2">
+                    	Address
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                    	<textarea class="form-control"></textarea>
+                    </div>
+                </div>
+                
+                <div class="row"><br>
+                	<div class="col-md-4 col-md-offset-2">
+                    	No.Of Passengers
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                    	<input type="text" id="pas" readonly class="form-control">
+                    </div>
+                </div>
+                
+                <div class="row"><br>
+                	<div class="col-md-4 col-md-offset-2">
+                    	<input type="hidden" class="form-control">
+                    </div>
+                    <div class="col-md-4 col-md-offset-0 col-md-offset-2">
+                    	<button class="btn btn-success" id="cab">BOOK</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Row For Drop-->
+            <div class="row alert alert-success collapse" id="suc">
+            	<strong>Success !</strong>Cab Has Been Booked !
+            </div>
+         
+        </div>
+         <div class="panel-footer"><input type="hidden" class="form-control"> </div>
+     </div>
+  </div>
+ </div>
+ 
+
+ <!-- Second Row Starts Here.. -->
+ <div class="row collapse in" id="pan34">
+  <div class="col-md-4 col-md-offset-4 text-center">
+   <h2>TOUR PACKAGES</h2>
+ 	 <a href="#demo3" id="a3" style="text-decoration:none">
+		<span class="glyphicon glyphicon-random"></span>
+	    <h4>PACKAGE</h4>
+    	<p>Click here to select the pavkage...</p>
+	 </a>
+  </div> 
+  <!--Cloumn Two-->
+  <div class="col-md-4 text-center">
+   <h2>BOOK CAB/BUS</h2>
+ 	 <a href="#demo4" id="a4" style="text-decoration:none">
+		<span class="glyphicon glyphicon-road"></span>
+	    <h4>BOOK CAB/BUS</h4>
+    	<p>Click here to book the Cab..</p>
+	 </a>
+  </div>   
+ </div><!-- Row ends here-->
+</div>
+<!--Container Ends Here-->
+
+<!-- Modal Starts Here -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TICKET BOOKING</h4>
+        </div>
+        <div class="modal-body">
+         <!--Book Now Modal-->
+         	<div class="col-md-12 collapse" id="log">
+		      <form class="form-inline" role="form"><br><br>
+			    <div class="form-group">
+            	<input type="text" class="form-control" id="email" placeholder="From" required readonly>
+			    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+		    	<div class="form-group">
+        		   <input type="text" class="form-control" id="pwd" placeholder="To" required readonly>
+		   		</div>&nbsp;&nbsp;&nbsp;&nbsp;
+		   		<div class="form-group">
+    			<input type="text" class="form-control" required placeholder="Train No" readonly>
+				</div>
+            	<div class="form-group">
+    			<input type="date" class="form-control" required readonly>
+				</div>
+		    	<br><br>
+				<center>    <button type="button" class="btn btn-default">Submit</button></center><br><br>
+			  </form>
+        
+        	</div>
+            
+        <table class="table table-bordered table-responsive collapse" id="time">
+          <tr>
+          	<th>Train No</th>
+            <th>Train Name</th>
+            <th>From</th>
+            <th>Departure</th>
+            <th>To</th>
+            <th>Arraival</th>
+            <th>Travel Time</th>
+            <th>S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>TH</th>
+            <th>F</th>
+            <th>S</th>
+            <th></th>
+            </tr>
+          <tr>
+          	<td>12686</td>
+            <td>CHENNAI EXP</td>
+            <td>PTJ</td>
+            <td>00:05</td>
+            <td>MAS</td>
+            <td>08:00</td>
+            <td>07:55</td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><button class="btn btn-primary" id="clss">BOOk</button></td>
+           </tr>
+          </table>
+        
+        
+        <!--Search Modal-->
+          <table class="table table-bordered table-responsive collapse" id="coll1">
+          <tr>
+          	<th>Train No</th>
+            <th>Train Name</th>
+            <th>From</th>
+            <th>Departure</th>
+            <th>To</th>
+            <th>Arraival</th>
+            <th>Travel Time</th>
+            <th>S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>TH</th>
+            <th>F</th>
+            <th>S</th>
+            <th></th>
+            </tr>
+          <tr>
+          	<td>12686</td>
+            <td>CHENNAI EXP</td>
+            <td>PTJ</td>
+            <td>00:05</td>
+            <td>MAS</td>
+            <td>08:00</td>
+            <td>07:55</td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><button class="btn btn-primary cls">BOOk</button></td>
+           </tr>
+          <tr>
+          	<td>12686</td>
+            <td>KOVAi EXP</td>
+            <td>CBE</td>
+            <td>14:55</td>
+            <td>MAS</td>
+            <td>22:25</td>
+            <td>07:30</td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-remove"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><button class="btn btn-primary cls">BOOk</button></td></td>
+          </tr>
+          <tr>
+          	<td>12672</td>
+            <td>NILAGIRI EXP</td>
+            <td>CBE</td>
+            <td>20:55</td>
+            <td>MAS</td>
+            <td>05:05</td>
+            <td>08:10</td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+            <td><button class="btn btn-primary cls">BOOk</button></td></td>
+          </tr>
+          </table>
+			<!-- Select Class !-->       
+         <div class="row collapse" id="coll2">
+         	<div class="col-md-4"><h4>Select The Class</h4>
+            </div>
+            <div class="col-md-4">
+            <select class="form-control" id="cls_sel">
+            	<option value=1>2A CLASS</option>
+                <option value=2>3A CLASS</option>
+                <option value=3>SL</option>
+            </select>
+            </div>
+            <div class="col-md-4"><button class="btn btn-primary" id="cls2">CHECK</button>
+            </div>
+         </div>
+         <!-- Select Class 2-->
+         <div class="row collapse" id="coll3">
+         	<div class="col-md-4"><h4>Select The Class</h4>
+            </div>
+            <div class="col-md-4">
+            <select class="form-control" id="cls_sel1">
+            	<option value=1>2A CLASS</option>
+                <option value=2>3A CLASS</option>
+                <option value=3>SL</option>
+            </select>
+            </div>
+            <div class="col-md-4"><button class="btn btn-primary" id="cls3">CHECK</button>
+            </div>
+         </div>
+         <!-- Availabilty One-->
+         <div class="row collapse table-responsive" id="avail">
+         	<table class="table table-bordered ">
+            	<tr><th>Date</th><td>19-04-2016</td><td>20-04-2016</td><td>21-04-2016</td><td>22-04-2016</td><td>23-04-2016</td></tr>
+                <tr><th>Availability</th><td>Available<br><a href="#" class="b1">Book Now</a></td><td>PQWL-23/WL-15<br><a href="#" class="b1">Book Now</a></td><td>WL-12<br><a href="#" class="b1">Book Now</a></td><td>Not Availabe</td><td>Available<br><a href="#" class="b1">Book Now</a></td></tr>
+            </table>
+            <div class="col-md-4">
+            	<button class="btn btn-danger"><span class="glyphicon glyphicon-arrow-left" style="color:white;" id="back"></span></button>
+            </div>
+         </div>
+         <!-- Availabilty Two-->
+         <div class="row collapse table-responsive" id="avail2">
+         	<table class="table table-bordered table-responsive">
+            	<tr><th>Date</th><td>19-04-2016</td><td>20-04-2016</td><td>21-04-2016</td><td>22-04-2016</td><td>23-04-2016</td></tr>
+                <tr><th>Availability</th><td>Available<br><a href="#" class="b1">Book Now</a></td><td>PQWL-23/WL-15<br><a href="#" class="b1">Book Now</a></td><td>WL-12<br><a href="#" class="b1">Book Now</a></td><td>Not Availabe</td><td>Available<br><a href="#" class="b1">Book Now</a></td></tr>
+            </table>
+            <div class="col-md-4">
+            	<button class="btn btn-danger"><span class="glyphicon glyphicon-arrow-left" style="color:white;" id="back2"></span></button>
+            </div>
+         </div>
+         
+         <table class="table table-bordered table-responsive collapse" id="end1">
+          <caption style="background-color:red;color:#FFFFFF;text-align:center">Passenger Details</caption>
+          <tr>
+          	<th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Birth Preference</th>
+                <th>Senior Citizen</th>
+                <th>Nationality</th>
+                <th>Id Card Type</th>
+                <th>Id Card No</th>
+            </tr>
+          <tr>
+          	<td>1</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+           </tr>
+          <tr>
+          	<td>2</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+          </tr>
+          <tr>
+          	<td>3</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+          </tr>
+          <tr>
+          		<td>4</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+          </tr>
+          <tr>
+          		<td>5</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+          </tr>
+          <tr>
+          		<td>6</td>
+                <td><input type="text" size="4px"></td>
+                <td><input type="number" size="3px"></td>
+                <td><select><option>Male</option><option>Female</option></select></td>
+                <td><select><option>Lower</option><option>Upper</option><option>Middle</option><option>Side Lower</option><option>Side Upper</option></select></td>
+                <td><input type="radio"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+                <td><input type="text" size="3px"></td>
+          </tr>
+          </table>
+         
+         <div class="row collapse" id="end2">
+         	<div class="col-md-3 col-md-offset-0 col-md-offset-9">Contact Details</div><br><br>
+            <div class="col-md-3"><h4>Name</h4></div>
+            <div class="col-md-3"><input type="text" class="form-control" value="Jayasurya" readonly></div>
+            <div class="col-md-3"><h4>Mob.No</h4></div>
+            <div class="col-md-3"><input type="number" class="form-control" value="9087654321" readonly></div><br><br>
+            <div class="col-md-3"><h4>Address</h4></div>
+            <div class="col-md-3"><input type="text" value="162 Kumaran Nagar,  Ondipudur S.O" class="form-control" readonly></div>
+         	<div class="col-md-3 col-md-offset-3 col-md-offset-1"><button class="btn btn-success" id="close">FINISH</button></div>
+         </div>
+         
+           <div class="collapse alert alert-success" id="alet1">
+         		<strong>Success!</strong> Ticket Has been Booked !
+	       </div>
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  
+<!-- Modal-2 Starts Here -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+  
+<!-- MODAL FOR CANCEL-->
+<div class="modal fade" id="DEL" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TICKET DETAILS</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-stripped table-responsive tbUser">
+          <tr style="background-color:red;color:white"><th>TRAIN NO</th><th>TRAIN NAME</th><th>SEAT NO</th><th>PASSENGER NAME</th><th>AGE</th><th>CLASS</th><th></th></tr> 
+          <tr><td>16382</td><td>CAPE MUMBAI EXP</td><td>55</td><td>HARI</td><td>26</td><td>SL</td><td><button class="btn btn-danger Delete">CANCEL</button></td></tr>
+          <tr><td>16525</td><td>CAPE MUMBAI EXP</td><td>56</td><td>HARINI</td><td>25</td><td>SL</td><td><button class="btn btn-danger Delete">CANCEL</button></td></tr>
+          <tr><td>16809</td><td>CAPE MUMBAI EXP</td><td>57</td><td>VELU</td><td>23</td><td>SL</td><td><button class="btn btn-danger Delete">CANCEL</button></td></tr>
+         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td><button type="button" class="btn btn-success" id="tab">Cancel All</button></td></tr> 
+        </table>
+        <div class="collapse alert alert-success" id="alt">
+         <strong>Success!</strong> You have canceled all the tickets.
+        </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</body>
+</html>
